@@ -444,6 +444,7 @@ button:hover span:after {
     min-height: 100vh;
     width: 100%;
     /* background-position: 50% 50%; */
+    margin-top: 8rem;
 }
 
 .our-worlds {
@@ -462,7 +463,7 @@ button:hover span:after {
 
 .our-worlds-item {
     margin-left: 35.5rem;
-    margin-top: 4rem;
+    margin-top: 3.5rem;
     background: transparent;
 }
 

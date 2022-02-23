@@ -120,15 +120,22 @@ h6 {
     font-weight: lighter;
     /* font-size: 12px; */
     letter-spacing: 1px;
-    cursor: pointer;
-    color: rgb(204, 207, 209);
     line-height: 1.3;
 }
 
 .scroll-to-explore {
     font-family: 'Times New Roman', Times, serif;
+    color: rgb(204, 207, 209);
     font-size: 16px;
-    padding-bottom: 6rem;
+    margin-bottom: 6rem;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.scroll-to-explore:hover {
+    color: #fff;
+    background: transparent;
 }
 
 
@@ -149,15 +156,18 @@ h6 {
     letter-spacing: 2px;
     padding-top: 4rem;
     padding-left: 3rem;
+    margin-bottom: 3rem;
 }
 
 .section-content {
+    position: relative;
+}
+
+.section-content .image-slider-wrapper {
     background-color: #f3f3f3;
-    width: 100%;
+    width: 65%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 5;
 }
 
 .greenary-image {
@@ -170,36 +180,34 @@ h6 {
     width: 80%;
     height: 720px;
     object-fit: cover;
-    left: 40px;
-    top: 60px;
-    position: relative;
 }
 
-.golf-text-button {
+.text-slider-wrapper {
     z-index: 10;
-    height: 95vh;
+    height: 600px;
     background-color: #fff;
-    position: relative;
-    top: 1rem;
-    bottom: 3rem;
-    right: 12rem;
-    width: 50%;
-    border-radius: 20px;
-    border: 1px solid #73AD21;
-    box-shadow: 5px 8px 8px #888888;
-    /* padding: 20px;
-    width: 200px;
-    height: 150px; */
+    position: absolute;
+    top: 45%;
+    right: 0;
+    width: 42%;
+    box-shadow: 8px 0px 8px rgb(0 0 0 / 0.5%);
+    transform: translateY(-50%);
 }
 
 .news,
 .discovery-text,
 .paragraph-text-item,
 .read-article {
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 0;
+    margin-bottom: 30px;
+}
+
+.read-article {
+    background-color: transparent;
+    border: 1px solid #aaa;
+    color: #222;
+    box-shadow: none;
+    padding: 16px 50px;
+    width: auto;
 }
 
 .paragraph-text-item {
@@ -266,6 +274,148 @@ button:hover span:after {
 }
 
 .arrows {
+    position: absolute;
+    bottom: 20px;
+    right: 8%;
+    z-index: 20;
+}
+
+.arrow-1 {
+    height: 1.1rem;
+    padding-left: 3rem;
+}
+
+.arrow-2 {
+    height: 1.1rem;
+    padding-left: 3rem;
+}
+
+button.arrow-prev,
+button.arrow-next {
+    border: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    width: 80px;
+}
+
+button.arrow-prev svg,
+button.arrow-next svg {
+    width: 20px;
+}
+
+
+/*
+.section-content {
+    background-color: #f3f3f3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.greenary-image {
+    width: 100%;
+    height: 800px;
+    z-index: 5;
+}
+
+.greenary-image-item {
+    width: 80%;
+    height: 720px;
+    object-fit: cover;
+    left: 40px;
+    top: 60px;
+    position: relative;
+}
+
+.golf-text-button {
+    z-index: 10;
+    height: 95vh;
+    background-color: #fff;
+    position: relative;
+    top: 1rem;
+    bottom: 3rem;
+    right: 12rem;
+    width: 50%;
+    border-radius: 20px;
+    border: 1px solid #73AD21;
+    box-shadow: 5px 8px 8px #888888;
+    
+}
+
+.news,
+.discovery-text,
+.paragraph-text-item,
+.read-article {
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 0;
+}
+
+.paragraph-text-item {
+    font-family: gt-sectra;
+    font-weight: lighter;
+    font-size: 14px;
+    line-height: 1.5rem;
+    letter-spacing: .1rem;
+}
+
+.discovery-text {
+    font-size: 25px;
+    line-height: 1.5rem;
+    letter-spacing: .1rem;
+    font-family: gt-sectra;
+    font-weight: lighter;
+}
+
+button {
+    display: inline-block;
+    background-color: #bcbbbe;
+    border-radius: 2rempx;
+    border: 2px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 5px 5px 6px #888888;
+}
+
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #f3f1f3;
+    color: black;
+}
+
+button:hover span {
+    padding-right: 25px;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.arrows {
     background-color: #f3f3f3;
     padding-left: 32rem;
 }
@@ -279,18 +429,24 @@ button:hover span:after {
     height: 1.1rem;
     padding-left: 3rem;
 }
+*/
+
+.golf-text-button {
+    padding: 60px;
+}
 
 
 /* Section : 3 */
 
-.main {
+
+/* .row {
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
     padding-top: 2rem;
     padding-bottom: 1rem;
-}
+} */
 
 .Press {
     text-decoration: none;
@@ -300,24 +456,24 @@ button:hover span:after {
     font-family: 'Garamond', sans-serif;
 }
 
-.press-item {
+.page-sub-heading {
     text-decoration: none;
     font-weight: lighter;
     font-size: 30px;
     letter-spacing: 2px;
     padding-top: 4rem;
     padding-left: 3rem;
+    margin-bottom: 3rem;
 }
 
 .arrow-class {
     background-color: #fff;
-    padding-left: 32rem;
-    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
 }
 
 .arrow-3 {
     height: 1.1rem;
-    padding-left: 3rem;
 }
 
 .arrow-4 {
@@ -325,8 +481,8 @@ button:hover span:after {
     padding-left: 3rem;
 }
 
-.section-element>div {
-    min-height: 180px;
+.row>div {
+    min-height: 240px;
 }
 
 
